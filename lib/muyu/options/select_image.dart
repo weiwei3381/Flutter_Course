@@ -13,7 +13,9 @@ class ImageOptionPanel extends StatelessWidget {
       : super(key: key);
 
   Widget _buildByIndex(int index){
-    bool active = index == activeIndex;
+    bool active = index == activeIndex;  // 激活的状态
+    print(active);
+    // 图片上的动作检测
     return GestureDetector(
       onTap: ()=> onSelect(index),
       child: ImageOptionItem(
@@ -26,11 +28,12 @@ class ImageOptionPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const TextStyle labelStyle =
-    TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
+    TextStyle(fontSize: 16, fontWeight: FontWeight.bold);  // 选择木鱼4个字的样式
     const EdgeInsets padding = EdgeInsets.symmetric(
         horizontal: 8.0, vertical: 16);
+
     return Material(child: SizedBox(
-      height: 300,
+      height: 250,
       child: Column(children: [
         Container(height: 46,
           alignment: Alignment.center,
@@ -50,15 +53,17 @@ class ImageOptionPanel extends StatelessWidget {
   }
 }
 
+// 单个木鱼的选项显示
 class ImageOptionItem extends StatelessWidget {
   final ImageOption option;
-  final bool active;
+  final bool active;  // 如果激活的木鱼,则显示蓝色框
 
   const ImageOptionItem({Key? key, required this.option, required this.active});
 
   @override
   Widget build(BuildContext context) {
-    const Border activeBorder =
+    print(active);
+    Border activeBorder =
     Border.fromBorderSide(BorderSide(color: Colors.blue));
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8),

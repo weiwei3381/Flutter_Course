@@ -52,6 +52,7 @@ class _MuyuPageState extends State<MuyuPage> {
     });
   }
 
+  // 选择图像的情况
   void _onSelectImage(int value) {
     Navigator.of(context).pop(); // 确保选择时关闭底部弹框
     if (value == _activeImageIndex) return;
@@ -66,6 +67,7 @@ class _MuyuPageState extends State<MuyuPage> {
     showCupertinoModalPopup(
         context: context,
         builder: (BuildContext context) {
+          // 返回图像选项框
           return ImageOptionPanel(
               imageOptions: imageOptions,
               onSelect: _onSelectImage,

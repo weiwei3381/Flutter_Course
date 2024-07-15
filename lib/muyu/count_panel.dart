@@ -27,7 +27,7 @@ class CountPanel extends StatelessWidget {
         Center(
             child: Text(
               '功德数：$count',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             )),
         Positioned(
             right: 10,
@@ -37,14 +37,14 @@ class CountPanel extends StatelessWidget {
               direction: Axis.vertical,
               children: [
                 ElevatedButton(
-                  child: Icon((Icons.music_note_outlined)),
                   style: style,
                   onPressed: onTapSwitchAudio,
+                  child: const Icon(Icons.music_note_outlined),
                 ),
                 ElevatedButton(
-                  child: Icon((Icons.image)),
                   style: style,
                   onPressed: onTapSwitchImage,
+                  child: const Icon(Icons.image),
                 )
               ],
             ))
