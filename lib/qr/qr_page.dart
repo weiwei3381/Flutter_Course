@@ -21,6 +21,7 @@ class _QrPageState extends State<QrPage> {
     return pageNum + 1;
   }
 
+  // 得到分割的信息内容
   List<String> get splitInfos {
     List<String> splitInfos = []; // 最后生成的信息
     int length = widget.info.length; // 信息的长度
@@ -43,7 +44,6 @@ class _QrPageState extends State<QrPage> {
         splitInfos.add(lastValue);
       }
     }
-    print('splitInfos: $splitInfos, 长度:${splitInfos.length}');
     return splitInfos;
   }
 
